@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAMOOSHIK | Premium Cat Furniture</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fcfbfa;
+            --text-main: #2d2b2a;
+            --text-muted: #6e6a68;
+            --accent: #8c7662; 
+            --accent-hover: #735f4e;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 480px;
+            width: 100%;
+            text-align: center;
+        }
+
+        header h1 {
+            font-weight: 600;
+            font-size: 2rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        header p {
+            font-weight: 300;
+            font-size: 1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .image-container {
+            width: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: #f4f2f0;
+            margin-bottom: 20px;
+            aspect-ratio: 1 / 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-title {
+            font-weight: 500;
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .product-description {
+            font-weight: 300;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 24px;
+        }
+
+        .amazon-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 16px;
+            background-color: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .amazon-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>LAMOOSHIK</h1>
+            <p>Premium Aesthetic Cat Furniture</p>
+        </header>
+
+        <div class="product-card">
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?auto=format&fit=crop&q=80&w=600" alt="LAMOOSHIK Cat Wall Shelves">
+            </div>
+            <h2 class="product-title">Solid Wood Cat Wall Shelves</h2>
+            <p class="product-description">Elegant minimalist design in a beautiful Walnut Finish. Crafted for modern homes and happy cats.</p>
+            
+            <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/ref=mp_s_a_1_3?crid=2KMVVZHPHWZE7&dib=eyJ2IjoiMSJ9.SUtBUDk3lFzU00MVK4_ENVsj7MqqdtKLSP9aZigqwd9hbwEEgNYe0p4d2xaZGfUNhoP5w9IvsFRhjABxF2x2lL8ZxGvzuPRbTKBd8s2Ph9PBg6KTG1oO4UIIIjTTYZfvsl3yO_cxpvULe-R4BynClqQNcGby_a-a2hryUNpkRtP8xGgjnqEpLsEKaTPL9t-aOlMTUHSWLVqb9E71oJdf_XS8cJNYyIM_ca4Ga41CG6qDdKGZOFRBUu-kL2bRfunSy9mQ_27hdH999PjaNms_56H-rEvWIzsfbjPcA6JfLW4.0FosXUMvKkMmrTO2cl2WS1TJ48hRHHa9aP9TxmuXc94&dib_tag=se&keywords=lamooshik&qid=1780771612&sprefix=lamoo%2Caps%2C315&sr=8-3" target="_blank" class="amazon-btn">
+                Shop on Amazon
+            </a>
+        </div>
+
+        <footer>
+            &copy; 2026 LAMOOSHIK. All rights reserved.
+        </footer>
+    </div>
+
+</body>
+</html>
