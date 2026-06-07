@@ -218,7 +218,7 @@
     </footer>
 
     <script>
-        // אובייקט עם הקישורים המדויקים והחדשים שסיפקת
+        // שימוש בקישורים נקיים וממוקדים כדי למנוע מאמזון לבצע הפניות שגויות ומבלבלות בדפדפן
         var productData = {
             walnut: {
                 img: "walnut.png.JPG",
@@ -235,17 +235,15 @@
         };
 
         function changeProduct(finish) {
-            // עדכון התמונה והקישור בהתאם לבחירה באובייקט
+            // החלפת תמונה וקישור
             document.getElementById('mainProductImage').src = productData[finish].img;
             document.getElementById('amazonBuyLink').href = productData[finish].url;
 
-            // הסרת ה-active מכל הכפתורים
+            // עדכון המראה של הכפתורים (פידבק ויזואלי למשתמש)
             var swatches = document.getElementsByClassName('swatch');
             for (var i = 0; i < swatches.length; i++) {
                 swatches[i].classList.remove('active');
             }
-
-            // הוספת ה-active לכפתור הנוכחי
             document.getElementById('btn-' + finish).classList.add('active');
         }
     </script>
