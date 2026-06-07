@@ -188,6 +188,7 @@
 
     <div class="product-container">
         <div class="image-gallery">
+            <!-- ברירת המחדל היא Walnut -->
             <img id="mainProductImage" src="walnut.png.JPG" alt="LAMOOSHIK Cat Wall Shelves">
         </div>
 
@@ -203,11 +204,12 @@
 
             <ul class="bullets-list">
                 <li><strong>Climb, Rest & Explore:</strong> Transform your home into a playground that fulfills your cat’s natural instincts to climb, rest and explore. The shelves and curved bed create a cozy little world that keeps your cat active, comfortable and endlessly curious indoors.</li>
-                <li><strong>Cozy Haven:</strong> The curved wall bed gently hugs your cat’s body, creating a secure and comfortable resting spot they’ll instantly love. Designed for calm, secure, and peaceful relaxation.</li>
-                <li><strong>Premium & Stylish Design:</strong> Crafted with high-quality materials to ensure durability and safety for your pets, while seamlessly blending into your modern home decor.</li>
+                <li><strong>Cozy Haven:</strong> The curved wall bed gently hugs your cat’s body, creating a secure and comfortable resting spot they’ll instantly love. Designed for calm, confidence and comfort, a soft retreat your furry friend will always return to.</li>
+                <li><strong>Safe and Steady Space:</strong> Every jump and stretch feels secure with shelves that stay firm and steady. Designed to support your cat’s playful spirit while keeping them safe above the ground, giving you peace of mind and your cat the confidence to explore freely.</li>
             </ul>
 
-            <a id="buyButton" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47K9S1/" target="_blank" class="buy-button">
+            <!-- כפתור הרכישה הראשי עם הקישור המקורי והעובד של ה-Walnut -->
+            <a id="buyButton" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1" target="_blank" class="buy-button">
                 View on Amazon
             </a>
         </div>
@@ -218,10 +220,11 @@
     </footer>
 
     <script>
+        // המערך שמבוסס אך ורק על הקישורים המקוריים והתקינים שלך
         const productVariations = {
             walnut: {
                 image: "walnut.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47K9S1/"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1"
             },
             black: {
                 image: "black.png.JPG",
@@ -234,12 +237,15 @@
         };
 
         function changeProduct(variant) {
+            // 1. עדכון תמונת המוצר
             const mainImage = document.getElementById("mainProductImage");
             mainImage.src = productVariations[variant].image;
 
+            // 2. עדכון לינק כפתור הרכישה לאמזון
             const buyButton = document.getElementById("buyButton");
             buyButton.href = productVariations[variant].url;
 
+            // 3. עדכון עיצוב כפתור הבחירה הפעיל
             const swatches = document.querySelectorAll('.swatch');
             swatches.forEach(swatch => swatch.classList.remove('active'));
             
