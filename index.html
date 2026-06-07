@@ -207,7 +207,7 @@
                 <li><strong>Safe and Steady Space:</strong> Every jump and stretch feels secure with shelves that stay firm and steady. Designed to support your cat’s playful spirit while keeping them safe above the ground, giving you peace of mind and your cat the confidence to explore freely.</li>
             </ul>
 
-            <a id="amazonBuyLink" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="buy-button">
+            <a id="amazonBuyLink" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/?th=1" target="_blank" class="buy-button">
                 Shop This Finish On Amazon
             </a>
         </div>
@@ -218,50 +218,36 @@
     </footer>
 
     <script>
+        // אובייקט שמכיל את המידע עבור כל גימור (תמונה וקישור ייעודי לאמזון)
         var productData = {
             walnut: {
                 img: "walnut.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/?th=1"
             },
             black: {
                 img: "black.png.JPG",
-                url: "https://www.amazon.com/dp/B0FM3K9YCD/"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/?th=2"
             },
             natural: {
                 img: "natural.png.JPG",
-                url: "https://www.amazon.com/dp/B0FM3LQY7X/"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/?th=3"
             }
         };
 
-        function changeProduct(style) {
-            // Update image safely
-            var mainImg = document.getElementById('mainProductImage');
-            if (mainImg) {
-                mainImg.style.opacity = 0.3;
-                setTimeout(function() {
-                    mainImg.src = productData[style].img;
-                    mainImg.style.opacity = 1;
-                }, 150);
-            }
+        // פונקציה להחלפת התמונה, הקישור וכפתורי הבחירה (Swatches)
+        function changeProduct(finish) {
+            // עדכון התמונה והקישור בהתאם לבחירה
+            document.getElementById('mainProductImage').src = productData[finish].img;
+            document.getElementById('amazonBuyLink').href = productData[finish].url;
 
-            // Update link safely
-            var buyLink = document.getElementById('amazonBuyLink');
-            if (buyLink) {
-                buyLink.href = productData[style].url;
-            }
-
-            // Update button UI state explicitly without using generic event listeners
-            var swatches = ['walnut', 'black', 'natural'];
+            // הסרת המחלקה האקטיבית (active) מכל הכפתורים
+            var swatches = document.getElementsByClassName('swatch');
             for (var i = 0; i < swatches.length; i++) {
-                var btn = document.getElementById('btn-' + swatches[i]);
-                if (btn) {
-                    if (swatches[i] === style) {
-                        btn.classList.add('active');
-                    } else {
-                        btn.classList.remove('active');
-                    }
-                }
+                swatches[i].classList.remove('active');
             }
+
+            // הוספת המחלקה האקטיבית לכפתור שנלחץ
+            document.getElementById('btn-' + finish).classList.add('active');
         }
     </script>
 
