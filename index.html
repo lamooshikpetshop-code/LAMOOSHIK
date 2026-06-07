@@ -117,6 +117,7 @@
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .swatch:hover {
@@ -182,7 +183,7 @@
 <body>
 
     <header>
-        <h1>%LOGO%</h1>
+        <h1>LAMOOSHIK</h1>
     </header>
 
     <div class="product-container">
@@ -192,3 +193,77 @@
 
         <div class="product-details">
             <h2 class="title">Modern Cat Wall Shelves</h2>
+            
+            <div class="swatch-title">Select Finish:</div>
+            <div class="swatches-container">
+                <button id="btn-walnut" class="swatch active" onclick="changeProduct('walnut')">Walnut</button>
+                <button id="btn-black" class="swatch" onclick="changeProduct('black')">Black</button>
+                <button id="btn-natural" class="swatch" onclick="changeProduct('natural')">Natural</button>
+            </div>
+
+            <ul class="bullets-list">
+                <li><strong>Climb, Rest & Explore:</strong> Transform your home into a playground that fulfills your cat’s natural instincts to climb, rest and explore. The shelves and curved bed create a cozy little world that keeps your cat active, comfortable and endlessly curious indoors.</li>
+                <li><strong>Cozy Haven:</strong> The curved wall bed gently hugs your cat’s body, creating a secure and comfortable resting spot they’ll instantly love. Designed for calm, confidence and comfort, a soft retreat your furry friend will always return to.</li>
+                <li><strong>Safe and Steady Space:</strong> Every jump and stretch feels secure with shelves that stay firm and steady. Designed to support your cat’s playful spirit while keeping them safe above the ground, giving you peace of mind and your cat the confidence to explore freely.</li>
+            </ul>
+
+            <a id="amazonBuyLink" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="buy-button">
+                Shop This Finish On Amazon
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 LAMOOSHIK. All rights reserved.
+    </footer>
+
+    <script>
+        var productData = {
+            walnut: {
+                img: "walnut.png.JPG",
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/"
+            },
+            black: {
+                img: "black.png.JPG",
+                url: "https://www.amazon.com/dp/B0FM3K9YCD/"
+            },
+            natural: {
+                img: "natural.png.JPG",
+                url: "https://www.amazon.com/dp/B0FM3LQY7X/"
+            }
+        };
+
+        function changeProduct(style) {
+            // Update image safely
+            var mainImg = document.getElementById('mainProductImage');
+            if (mainImg) {
+                mainImg.style.opacity = 0.3;
+                setTimeout(function() {
+                    mainImg.src = productData[style].img;
+                    mainImg.style.opacity = 1;
+                }, 150);
+            }
+
+            // Update link safely
+            var buyLink = document.getElementById('amazonBuyLink');
+            if (buyLink) {
+                buyLink.href = productData[style].url;
+            }
+
+            // Update button UI state explicitly without using generic event listeners
+            var swatches = ['walnut', 'black', 'natural'];
+            for (var i = 0; i < swatches.length; i++) {
+                var btn = document.getElementById('btn-' + swatches[i]);
+                if (btn) {
+                    if (swatches[i] === style) {
+                        btn.classList.add('active');
+                    } else {
+                        btn.classList.remove('active');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
