@@ -8,16 +8,16 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --bg-color: #fcfbfa;
-            --text-main: #1a1a1a;
-            --text-muted: #666666;
+            --bg-color: #fdfcfb;
+            --text-main: #1e1b18;
+            --text-muted: #6b645f;
             --accent: #8c7662;
-            --accent-hover: #735f4e;
             --white: #ffffff;
+            --card-border: #eae6e2;
         }
 
         * {
@@ -33,133 +33,165 @@
             line-height: 1.6;
         }
 
-        /* Header / Navigation */
+        /* Hero / Header Section */
         header {
             background-color: var(--white);
-            padding: 20px;
+            padding: 35px 20px;
             text-align: center;
-            border-bottom: 1px solid #eae7e4;
-            letter-spacing: 3px;
+            border-bottom: 1px solid var(--card-border);
         }
 
         header h1 {
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             font-weight: 700;
-        }
-
-        /* Product Section */
-        .product-container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        @media (max-width: 768px) {
-            .product-container {
-                grid-template-columns: 1fr;
-                gap: 30px;
-                margin: 20px auto;
-            }
-        }
-
-        /* Image Gallery Placeholders */
-        .product-images {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .main-image {
-            width: 100%;
-            aspect-ratio: 1;
-            background-color: #f0ebe6;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent);
-            font-weight: 600;
-            border: 1px solid #eae7e4;
-            background-image: url('https://m.media-amazon.com/images/I/71-S6YyN7dL._AC_SL1500_.jpg'); /* זמני מאמזון */
-            background-size: cover;
-            background-position: center;
-        }
-
-        /* Product Info */
-        .product-info {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .brand-tag {
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 2px;
-            color: var(--accent);
-            font-weight: 600;
+            letter-spacing: 4px;
             margin-bottom: 10px;
         }
 
-        .product-title {
-            font-size: 2.2rem;
+        header p {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+
+        /* Intro Section based on Listing */
+        .intro-container {
+            max-width: 800px;
+            margin: 40px auto 20px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .intro-container h2 {
+            font-size: 1.8rem;
             font-weight: 600;
-            line-height: 1.2;
             margin-bottom: 15px;
         }
 
-        .price {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--text-main);
-            margin-bottom: 25px;
-        }
-
-        .description {
+        .intro-container p {
             color: var(--text-muted);
-            margin-bottom: 30px;
-            font-size: 1rem;
+            font-size: 1.05rem;
         }
 
-        .features-list {
+        /* Products Grid */
+        .catalog-grid {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        @media (max-width: 992px) {
+            .catalog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .catalog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Product Card */
+        .product-card {
+            background-color: var(--white);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(140, 118, 98, 0.03);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(140, 118, 98, 0.08);
+        }
+
+        .image-wrapper {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #f9f8f6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .color-badge {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        /* Amazon Specs Bullet Style */
+        .bullet-specs {
             list-style: none;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            flex-grow: 1;
         }
 
-        .features-list li {
-            margin-bottom: 10px;
+        .bullet-specs li {
+            margin-bottom: 8px;
             position: relative;
-            padding-left: 25px;
-            color: var(--text-main);
+            padding-left: 20px;
         }
 
-        .features-list li::before {
-            content: "✓";
+        .bullet-specs li::before {
+            content: "•";
             position: absolute;
             left: 0;
             color: var(--accent);
             font-weight: bold;
         }
 
-        /* Amazon Buy Button */
-        .buy-btn {
+        /* Amazon Styled Button */
+        .amazon-btn {
             display: block;
             background-color: #232f3e;
             color: var(--white);
             text-align: center;
-            padding: 18px;
-            border-radius: 30px;
+            padding: 14px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             transition: background-color 0.2s;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .buy-btn:hover {
+        .amazon-btn:hover {
             background-color: #131a22;
         }
 
@@ -167,7 +199,7 @@
             text-align: center;
             padding: 40px 20px;
             margin-top: 60px;
-            border-top: 1px solid #eae7e4;
+            border-top: 1px solid var(--card-border);
             font-size: 0.85rem;
             color: var(--text-muted);
             letter-spacing: 1px;
@@ -178,36 +210,77 @@
 
     <header>
         <h1>LAMOOSHIK</h1>
+        <p>Premium Cat Furniture & Living</p>
     </header>
 
-    <div class="product-container">
-        <!-- Left Side: Images -->
-        <div class="product-images">
-            <div class="main-image"></div>
+    <div class="intro-container">
+        <h2>Modern Cat Wall Shelves</h2>
+        <p>Give your feline friend the perfect vertical territory. Handcrafted, sturdy, and beautifully designed to blend seamlessly with your modern home decor.</p>
+    </div>
+
+    <!-- Product Catalog Grid -->
+    <div class="catalog-grid">
+        
+        <!-- CARD 1: WALNUT -->
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/71-S6YyN7dL._AC_SL1500_.jpg" alt="LAMOOSHIK Cat Wall Shelves - Walnut Finish">
+            </div>
+            <div class="card-content">
+                <span class="color-badge">Walnut Finish</span>
+                <h3 class="card-title">Cat Wall Shelves</h3>
+                <ul class="bullet-specs">
+                    <li>Premium handcrafted heavy-duty wood</li>
+                    <li>Sleek modern boho-chic aesthetics</li>
+                    <li>Secure and reliable wall-mounted design</li>
+                    <li>Creates safe vertical space for climbing & lounging</li>
+                </ul>
+                <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="amazon-btn">
+                    View on Amazon
+                </a>
+            </div>
         </div>
 
-        <!-- Right Side: Details -->
-        <div class="product-info">
-            <span class="brand-tag">Premium Cat Furniture</span>
-            <h2 class="product-title">Luxury Cat Wall Shelves</h2>
-            <div class="price">Walnut Finish</div>
-            
-            <p class="description">
-                Elevate your cat's world with our premium handcrafted wall shelves. Designed with a sleek modern aesthetic and finished in rich walnut, this vertical playground offers your feline friend a secure, stylish, and comfortable space to lounge, climb, and observe their kingdom.
-            </p>
-
-            <ul class="features-list">
-                <li>Premium Solid Wood Construction</li>
-                <li>Elegant Walnut Finish Matches Home Decor</li>
-                <li>Sturdy & Secure Wall Mounting</li>
-                <li>Designed for Climbing and Lounging</li>
-            </ul>
-
-            <!-- הקישור הישיר שלך לאמזון -->
-            <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="buy-btn">
-                Shop Directly on Amazon
-            </a>
+        <!-- CARD 2: BLACK -->
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/61r5qZ8G14L._AC_SL1500_.jpg" alt="LAMOOSHIK Cat Wall Shelves - Black Finish">
+            </div>
+            <div class="card-content">
+                <span class="color-badge">Black Finish</span>
+                <h3 class="card-title">Cat Wall Shelves</h3>
+                <ul class="bullet-specs">
+                    <li>Premium handcrafted heavy-duty wood</li>
+                    <li>Sleek modern boho-chic aesthetics</li>
+                    <li>Secure and reliable wall-mounted design</li>
+                    <li>Creates safe vertical space for climbing & lounging</li>
+                </ul>
+                <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="amazon-btn">
+                    View on Amazon
+                </a>
+            </div>
         </div>
+
+        <!-- CARD 3: NATURAL -->
+        <div class="product-card">
+            <div class="image-wrapper">
+                <img src="https://m.media-amazon.com/images/I/61M6K5DqVWL._AC_SL1500_.jpg" alt="LAMOOSHIK Cat Wall Shelves - Natural Finish">
+            </div>
+            <div class="card-content">
+                <span class="color-badge">Natural Finish</span>
+                <h3 class="card-title">Cat Wall Shelves</h3>
+                <ul class="bullet-specs">
+                    <li>Premium handcrafted heavy-duty wood</li>
+                    <li>Sleek modern boho-chic aesthetics</li>
+                    <li>Secure and reliable wall-mounted design</li>
+                    <li>Creates safe vertical space for climbing & lounging</li>
+                </ul>
+                <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="amazon-btn">
+                    View on Amazon
+                </a>
+            </div>
+        </div>
+
     </div>
 
     <footer>
