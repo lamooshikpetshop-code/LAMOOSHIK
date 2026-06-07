@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LAMOOSHIK | Premium Cat Wall Shelves</title>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -20,7 +21,6 @@
         }
 
         * {
-            box-shadow: none;
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -117,18 +117,28 @@
         .image-wrapper {
             width: 100%;
             aspect-ratio: 1;
-            background-color: #f9f8f6;
+            background-color: #f5f2ef;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
             border-bottom: 1px solid var(--card-border);
+            color: var(--accent);
         }
 
-        .image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .image-wrapper svg {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+            fill: var(--accent);
+            opacity: 0.8;
+        }
+
+        .image-wrapper span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .card-content {
@@ -209,70 +219,78 @@
 <body>
 
     <header>
-        <h1>LAMOOSHIK</h1>
+        <h1>%LOGO%</h1>
         <p>Premium Cat Furniture & Living</p>
     </header>
 
     <div class="intro-container">
         <h2>Modern Cat Wall Shelves</h2>
-        <p>A beautiful boho-chic style vertical territory designed for your cat. Perfect for climbing, lounging, and playing while blending seamlessly into your home decor.</p>
+        <p>Give your cat the ultimate vertical territory. Beautifully designed with a boho-chic aesthetic, these heavy-duty wooden shelves provide a safe, sturdy, and stylish space for your feline friend to climb and lounge.</p>
     </div>
 
+    <!-- Product Catalog Grid -->
     <div class="catalog-grid">
         
+        <!-- CARD 1: WALNUT -->
         <div class="product-card">
             <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1548247416-ec66f4900b2e?q=80&w=1000&auto=format&fit=cover" alt="LAMOOSHIK Cat Wall Shelves - Walnut Finish">
+                <!-- אייקון חתול נקי במקום תמונה שבורה -->
+                <svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
+                <span>Walnut Edition</span>
             </div>
             <div class="card-content">
                 <span class="color-badge">Walnut Finish</span>
                 <h3 class="card-title">Cat Wall Shelves Set</h3>
                 <ul class="bullet-specs">
-                    <li>Heavy-duty wood construction for maximum stability</li>
-                    <li>Boho-chic design that complements modern interiors</li>
-                    <li>Provides safe vertical space for your feline friend</li>
-                    <li>Includes secure wall-mounting hardware</li>
+                    <li>Heavy-duty wooden construction for maximum safety</li>
+                    <li>Sleek boho-chic style that matches modern homes</li>
+                    <li>Perfect vertical lounge for your feline friend</li>
+                    <li>Secure wall-mounting hardware included</li>
                 </ul>
                 <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="amazon-btn">
-                    View on Amazon
+                    Shop on Amazon
                 </a>
             </div>
         </div>
 
+        <!-- CARD 2: BLACK -->
         <div class="product-card">
             <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=1000&auto=format&fit=cover" alt="LAMOOSHIK Cat Wall Shelves - Black Finish">
+                <svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
+                <span>Black Edition</span>
             </div>
             <div class="card-content">
                 <span class="color-badge">Black Finish</span>
                 <h3 class="card-title">Cat Wall Shelves Set</h3>
                 <ul class="bullet-specs">
-                    <li>Heavy-duty wood construction for maximum stability</li>
-                    <li>Boho-chic design that complements modern interiors</li>
-                    <li>Provides safe vertical space for your feline friend</li>
-                    <li>Includes secure wall-mounting hardware</li>
+                    <li>Heavy-duty wooden construction for maximum safety</li>
+                    <li>Sleek boho-chic style that matches modern homes</li>
+                    <li>Perfect vertical lounge for your feline friend</li>
+                    <li>Secure wall-mounting hardware included</li>
                 </ul>
                 <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="amazon-btn">
-                    View on Amazon
+                    Shop on Amazon
                 </a>
             </div>
         </div>
 
+        <!-- CARD 3: NATURAL -->
         <div class="product-card">
             <div class="image-wrapper">
-                <img src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?q=80&w=1000&auto=format&fit=cover" alt="LAMOOSHIK Cat Wall Shelves - Natural Finish">
+                <svg viewBox="0 0 24 24"><path d="M12 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm9 7h-6v13h-2v-6h-2v6H9V9H3V7h18v2z"/></svg>
+                <span>Natural Edition</span>
             </div>
             <div class="card-content">
                 <span class="color-badge">Natural Finish</span>
                 <h3 class="card-title">Cat Wall Shelves Set</h3>
                 <ul class="bullet-specs">
-                    <li>Heavy-duty wood construction for maximum stability</li>
-                    <li>Boho-chic design that complements modern interiors</li>
-                    <li>Provides safe vertical space for your feline friend</li>
-                    <li>Includes secure wall-mounting hardware</li>
+                    <li>Heavy-duty wooden construction for maximum safety</li>
+                    <li>Sleek boho-chic style that matches modern homes</li>
+                    <li>Perfect vertical lounge for your feline friend</li>
+                    <li>Secure wall-mounting hardware included</li>
                 </ul>
                 <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="amazon-btn">
-                    View on Amazon
+                    Shop on Amazon
                 </a>
             </div>
         </div>
