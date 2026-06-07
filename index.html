@@ -188,7 +188,6 @@
 
     <div class="product-container">
         <div class="image-gallery">
-            <!-- ברירת מחדל Walnut -->
             <img id="mainProductImage" src="walnut.png.JPG" alt="LAMOOSHIK Cat Wall Shelves">
         </div>
 
@@ -207,8 +206,7 @@
                 <li><strong>Cozy Haven:</strong> The curved wall bed gently hugs your cat’s body, creating a secure and comfortable resting spot they’ll instantly love. Designed for calm.</li>
             </ul>
 
-            <!-- כפתור הרכישה המעודכן דינמית -->
-            <a id="buyButton" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1" target="_blank" class="buy-button">
+            <a id="buyButton" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZP4H/" target="_blank" class="buy-button">
                 View on Amazon
             </a>
         </div>
@@ -219,32 +217,32 @@
     </footer>
 
     <script>
-        // מיפוי מדויק עם הפרדה מוחלטת בפרמטר הוריאציה של אמזון
+        // שלושת הווריאציות הנפרדות, המדויקות והעובדות של אמזון
         const productVariations = {
             walnut: {
                 image: "walnut.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZP4H/"
             },
             black: {
                 image: "black.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1&psc=1&variant=BLACK"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/"
             },
             natural: {
                 image: "natural.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1&psc=1&variant=NATURAL"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Natural-Finish/dp/B0FM47DXCX/"
             }
         };
 
         function changeProduct(variant) {
-            // 1. החלפת תמונה
+            // 1. עדכון תמונת המוצר
             const mainImage = document.getElementById("mainProductImage");
             mainImage.src = productVariations[variant].image;
 
-            // 2. החלפת לינק לאמזון
+            // 2. עדכון לינק כפתור הרכישה לאמזון
             const buyButton = document.getElementById("buyButton");
             buyButton.href = productVariations[variant].url;
 
-            // 3. עדכון כפתור פעיל
+            // 3. עדכון עיצוב כפתור הבחירה הפעיל
             const swatches = document.querySelectorAll('.swatch');
             swatches.forEach(swatch => swatch.classList.remove('active'));
             
