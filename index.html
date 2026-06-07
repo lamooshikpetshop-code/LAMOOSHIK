@@ -207,7 +207,7 @@
                 <li><strong>Safe and Steady Space:</strong> Every jump and stretch feels secure with shelves that stay firm and steady. Designed to support your cat’s playful spirit while keeping them safe above the ground, giving you peace of mind and your cat the confidence to explore freely.</li>
             </ul>
 
-            <a id="amazonBuyLink" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/?th=1" target="_blank" class="buy-button">
+            <a id="amazonBuyLink" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="buy-button">
                 Shop This Finish On Amazon
             </a>
         </div>
@@ -218,11 +218,11 @@
     </footer>
 
     <script>
-        // שימוש בקישורים נקיים וממוקדים כדי למנוע מאמזון לבצע הפניות שגויות ומבלבלות בדפדפן
+        // שימוש בקישורי ASIN נקיים וישירים לחלוטין כדי למנוע מאמזון להתבלבל בין הדפים השונים
         var productData = {
             walnut: {
                 img: "walnut.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/?th=1"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/"
             },
             black: {
                 img: "black.png.JPG",
@@ -230,16 +230,16 @@
             },
             natural: {
                 img: "natural.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1&psc=1"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/"
             }
         };
 
         function changeProduct(finish) {
-            // החלפת תמונה וקישור
+            // עדכון התמונה והקישור בהתאם לבחירה באובייקט
             document.getElementById('mainProductImage').src = productData[finish].img;
             document.getElementById('amazonBuyLink').href = productData[finish].url;
 
-            // עדכון המראה של הכפתורים (פידבק ויזואלי למשתמש)
+            // עדכון הכפתורים בצורה ויזואלית
             var swatches = document.getElementsByClassName('swatch');
             for (var i = 0; i < swatches.length; i++) {
                 swatches[i].classList.remove('active');
