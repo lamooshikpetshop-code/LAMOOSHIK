@@ -188,7 +188,7 @@
 
     <div class="product-container">
         <div class="image-gallery">
-            <!-- ברירת המחדל היא Walnut -->
+            <!-- ברירת מחדל Walnut -->
             <img id="mainProductImage" src="walnut.png.JPG" alt="LAMOOSHIK Cat Wall Shelves">
         </div>
 
@@ -207,7 +207,7 @@
                 <li><strong>Cozy Haven:</strong> The curved wall bed gently hugs your cat’s body, creating a secure and comfortable resting spot they’ll instantly love. Designed for calm.</li>
             </ul>
 
-            <!-- כפתור הקנייה דינמי ומפנה לאמזון בהתאם לצבע שנבחר -->
+            <!-- כפתור הרכישה המעודכן דינמית -->
             <a id="buyButton" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1" target="_blank" class="buy-button">
                 View on Amazon
             </a>
@@ -219,32 +219,32 @@
     </footer>
 
     <script>
-        // הגדרת המידע המלא לכל וריאציה - כאן ההפרדה החשובה בין בלק לנאטורל!
+        // מיפוי מדויק עם הפרדה מוחלטת בפרמטר הוריאציה של אמזון
         const productVariations = {
             walnut: {
                 image: "walnut.png.JPG",
                 url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1"
             },
             black: {
-                image: "black.png.JPG", // ודא ששם הקובץ של תמונת השחור תואם לזה
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1"
+                image: "black.png.JPG",
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1&psc=1&variant=BLACK"
             },
             natural: {
-                image: "natural.png.JPG", // ודא ששם הקובץ של תמונת הנטורל תואם לזה
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=2"
+                image: "natural.png.JPG",
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1&psc=1&variant=NATURAL"
             }
         };
 
         function changeProduct(variant) {
-            // 1. עדכון התמונה של המוצר
+            // 1. החלפת תמונה
             const mainImage = document.getElementById("mainProductImage");
             mainImage.src = productVariations[variant].image;
 
-            // 2. עדכון הקישור של כפתור הרכישה לאמזון
+            // 2. החלפת לינק לאמזון
             const buyButton = document.getElementById("buyButton");
             buyButton.href = productVariations[variant].url;
 
-            // 3. עדכון העיצוב של הכפתורים (הסרת קלאס active מכולם והוספה לנבחר)
+            // 3. עדכון כפתור פעיל
             const swatches = document.querySelectorAll('.swatch');
             swatches.forEach(swatch => swatch.classList.remove('active'));
             
