@@ -1,103 +1,218 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LAMOOSHIK | Premium Cat Furniture</title>
+    <title>LAMOOSHIK | Premium Cat Wall Shelves</title>
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --bg-color: #fcfbfa;
-            --text-main: #2d2b2a;
-            --text-muted: #6e6a68;
+            --text-main: #1a1a1a;
+            --text-muted: #666666;
             --accent: #8c7662;
             --accent-hover: #735f4e;
-            --card-bg: #ffffff;
+            --white: #ffffff;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Assistant', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--white);
             padding: 20px;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
             text-align: center;
-            background: var(--card-bg);
-            padding: 40px 20px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-bottom: 1px solid #eae7e4;
+            letter-spacing: 3px;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            color: var(--text-main);
-            margin-bottom: 10px;
+        header h1 {
+            font-size: 1.8rem;
             font-weight: 700;
         }
 
-        .subtitle {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            margin-bottom: 30px;
+        /* Product Section */
+        .product-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
         }
 
-        .divider {
-            height: 1px;
-            width: 60px;
-            background-color: var(--accent);
-            margin: 0 auto 30px auto;
+        @media (max-width: 768px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 20px auto;
+            }
         }
 
-        .status-badge {
-            display: inline-block;
-            background-color: #f3ebe3;
+        /* Image Gallery Placeholders */
+        .product-images {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .main-image {
+            width: 100%;
+            aspect-ratio: 1;
+            background-color: #f0ebe6;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--accent);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            margin-bottom: 40px;
+            font-weight: 600;
+            border: 1px solid #eae7e4;
+            background-image: url('https://m.media-amazon.com/images/I/71-S6YyN7dL._AC_SL1500_.jpg'); /* זמני מאמזון */
+            background-size: cover;
+            background-position: center;
         }
 
-        .footer {
-            margin-top: 40px;
+        /* Product Info */
+        .product-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .brand-tag {
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .product-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 25px;
+        }
+
+        .description {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 35px;
+        }
+
+        .features-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-main);
+        }
+
+        .features-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Amazon Buy Button */
+        .buy-btn {
+            display: block;
+            background-color: #232f3e;
+            color: var(--white);
+            text-align: center;
+            padding: 18px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: background-color 0.2s;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .buy-btn:hover {
+            background-color: #131a22;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 1px solid #eae7e4;
             font-size: 0.85rem;
             color: var(--text-muted);
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <header>
         <h1>LAMOOSHIK</h1>
-        <p class="subtitle">Premium Cat Furniture & Design</p>
-        
-        <div class="divider"></div>
-        
-        <div class="status-badge">האתר הרשמי בבנייה • בקרוב כאן</div>
-        
-        <p style="color: var(--text-main); font-size: 1.1rem;">אנחנו מכינים לחתול שלכם משהו מיוחד באמת.</p>
-        
-        <div class="footer">
-            &copy; 2026 LAMOOSHIK. All rights reserved.
+    </header>
+
+    <div class="product-container">
+        <!-- Left Side: Images -->
+        <div class="product-images">
+            <div class="main-image"></div>
+        </div>
+
+        <!-- Right Side: Details -->
+        <div class="product-info">
+            <span class="brand-tag">Premium Cat Furniture</span>
+            <h2 class="product-title">Luxury Cat Wall Shelves</h2>
+            <div class="price">Walnut Finish</div>
+            
+            <p class="description">
+                Elevate your cat's world with our premium handcrafted wall shelves. Designed with a sleek modern aesthetic and finished in rich walnut, this vertical playground offers your feline friend a secure, stylish, and comfortable space to lounge, climb, and observe their kingdom.
+            </p>
+
+            <ul class="features-list">
+                <li>Premium Solid Wood Construction</li>
+                <li>Elegant Walnut Finish Matches Home Decor</li>
+                <li>Sturdy & Secure Wall Mounting</li>
+                <li>Designed for Climbing and Lounging</li>
+            </ul>
+
+            <!-- הקישור הישיר שלך לאמזון -->
+            <a href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/" target="_blank" class="buy-btn">
+                Shop Directly on Amazon
+            </a>
         </div>
     </div>
+
+    <footer>
+        &copy; 2026 LAMOOSHIK. All rights reserved.
+    </footer>
 
 </body>
 </html>
