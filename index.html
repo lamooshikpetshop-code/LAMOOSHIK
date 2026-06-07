@@ -188,6 +188,7 @@
 
     <div class="product-container">
         <div class="image-gallery">
+            <!-- ברירת המחדל היא Walnut -->
             <img id="mainProductImage" src="walnut.png.JPG" alt="LAMOOSHIK Cat Wall Shelves">
         </div>
 
@@ -203,13 +204,12 @@
 
             <ul class="bullets-list">
                 <li><strong>Climb, Rest & Explore:</strong> Transform your home into a playground that fulfills your cat’s natural instincts to climb, rest and explore. The shelves and curved bed create a cozy little world that keeps your cat active, comfortable and endlessly curious indoors.</li>
-                <li><strong>Cozy Haven:</strong> The curved wall bed gently hugs your cat’s body, creating a secure and comfortable resting spot they’ll instantly love. Designed for calm, confidence and comfort, a soft retreat your furry friend will always return to.</li>
-                <li><strong>Safe and Steady Space:</strong> Every jump and stretch feels secure with shelves that stay firm and steady. Designed to support your cat’s playful spirit while keeping them safe above the ground, giving you peace of mind and your cat the confidence to explore freely.</li>
+                <li><strong>Cozy Haven:</strong> The curved wall bed gently hugs your cat’s body, creating a secure and comfortable resting spot they’ll instantly love. Designed for calm.</li>
             </ul>
 
-            <!-- קישור ברירת מחדל התחלתי שמפנה ל-Walnut בצורה נכונה -->
-            <a id="amazonBuyLink" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1" target="_blank" class="buy-button">
-                Shop This Finish On Amazon
+            <!-- כפתור הקנייה דינמי ומפנה לאמזון בהתאם לצבע שנבחר -->
+            <a id="buyButton" href="https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1" target="_blank" class="buy-button">
+                View on Amazon
             </a>
         </div>
     </div>
@@ -219,33 +219,36 @@
     </footer>
 
     <script>
-        // שיוך הקישורים למקומם המדויק לפי בקשתך:
-        var productData = {
+        // הגדרת המידע המלא לכל וריאציה - כאן ההפרדה החשובה בין בלק לנאטורל!
+        const productVariations = {
             walnut: {
-                img: "walnut.png.JPG",
+                image: "walnut.png.JPG",
                 url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM47DXCX/?th=1&psc=1"
             },
             black: {
-                img: "black.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/"
+                image: "black.png.JPG", // ודא ששם הקובץ של תמונת השחור תואם לזה
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1"
             },
             natural: {
-                img: "natural.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/"
+                image: "natural.png.JPG", // ודא ששם הקובץ של תמונת הנטורל תואם לזה
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=2"
             }
         };
 
-        function changeProduct(finish) {
-            // עדכון דינמי של התמונה והקישור בהתאם לגימור
-            document.getElementById('mainProductImage').src = productData[finish].img;
-            document.getElementById('amazonBuyLink').href = productData[finish].url;
+        function changeProduct(variant) {
+            // 1. עדכון התמונה של המוצר
+            const mainImage = document.getElementById("mainProductImage");
+            mainImage.src = productVariations[variant].image;
 
-            // עדכון המחלקה הויזואלית לכפתור הפעיל
-            var swatches = document.getElementsByClassName('swatch');
-            for (var i = 0; i < swatches.length; i++) {
-                swatches[i].classList.remove('active');
-            }
-            document.getElementById('btn-' + finish).classList.add('active');
+            // 2. עדכון הקישור של כפתור הרכישה לאמזון
+            const buyButton = document.getElementById("buyButton");
+            buyButton.href = productVariations[variant].url;
+
+            // 3. עדכון העיצוב של הכפתורים (הסרת קלאס active מכולם והוספה לנבחר)
+            const swatches = document.querySelectorAll('.swatch');
+            swatches.forEach(swatch => swatch.classList.remove('active'));
+            
+            document.getElementById(`btn-${variant}`).classList.add('active');
         }
     </script>
 
