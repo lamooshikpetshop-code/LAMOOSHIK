@@ -218,7 +218,7 @@
     </footer>
 
     <script>
-        // אובייקט שמכיל את המידע עבור כל גימור (תמונה וקישור ייעודי לאמזון)
+        // אובייקט עם הקישורים המדויקים והחדשים שסיפקת
         var productData = {
             walnut: {
                 img: "walnut.png.JPG",
@@ -230,23 +230,22 @@
             },
             natural: {
                 img: "natural.png.JPG",
-                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM3KY5QN/?th=3"
+                url: "https://www.amazon.com/LAMOOSHIK-Wall-Shelves-Walnut-Finish/dp/B0FM4FZ324/?th=1&psc=1"
             }
         };
 
-        // פונקציה להחלפת התמונה, הקישור וכפתורי הבחירה (Swatches)
         function changeProduct(finish) {
-            // עדכון התמונה והקישור בהתאם לבחירה
+            // עדכון התמונה והקישור בהתאם לבחירה באובייקט
             document.getElementById('mainProductImage').src = productData[finish].img;
             document.getElementById('amazonBuyLink').href = productData[finish].url;
 
-            // הסרת המחלקה האקטיבית (active) מכל הכפתורים
+            // הסרת ה-active מכל הכפתורים
             var swatches = document.getElementsByClassName('swatch');
             for (var i = 0; i < swatches.length; i++) {
                 swatches[i].classList.remove('active');
             }
 
-            // הוספת המחלקה האקטיבית לכפתור שנלחץ
+            // הוספת ה-active לכפתור הנוכחי
             document.getElementById('btn-' + finish).classList.add('active');
         }
     </script>
